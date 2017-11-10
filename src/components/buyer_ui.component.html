@@ -1,0 +1,56 @@
+<a v-bind:href="serverUrl + '/product/report/' + productId" target="_blank">
+    <div class="report-button" v-if="isOwner">
+        Report
+    </div>
+</a>
+<div class="smpay-title">
+    {{ title }}
+</div>
+<div class="smpay-description" style="white-space: pre-wrap;">{{ description }}</div>
+<div class="smpay-price">
+    {{ priceString }}
+</div>
+<button class="_1mf7 _4jy0 _4jy3 _4jy1 _51sy selected _42ft smpay-button" v-on:click="openModal()">
+    Pay
+</button>
+<div class="modal" v-if="paymentModal">
+    <div class="modal-content" style="height: 200px;">
+        <span class="close" v-on:click="paymentModal = false;">Close</span>
+        <table>
+            <tr>
+                <td style="font-weight: bold;">Amount</td>
+                <td>{{ priceStringCalc }}</td>
+            </tr>
+            <tr>
+                <td style="font-weight: bold;">Quantity</td>
+                <td><input type="text" v-model="buyerQuantity" v-on:keyup="changeAmount()"/></td>
+            </tr>
+            <tr>
+                <td style="font-weight: bold;">Your Account Number</td>
+                <td><input type="text" v-model="buyerAccountNumber"/></td>
+            </tr>
+            <tr>
+                <td style="font-weight: bold;">First Name</td>
+                <td><input type="text" v-model="buyerFirstName"/></td>
+            </tr>
+            <tr>
+                <td style="font-weight: bold;">Last Name</td>
+                <td><input type="text" v-model="buyerLastName"/></td>
+            </tr>
+            <tr>
+                <td style="font-weight: bold;">Address</td>
+                <td><input type="text" v-model="buyerAddress"/></td>
+            </tr>
+            <tr>
+                <td style="font-weight: bold;">Mobile Phone Number</td>
+                <td><input type="text" v-model="buyerMobile"/></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button v-on:click="doPayment()" class="_1mf7 _4jy0 _4jy3 _4jy1 _51sy selected _42ft smpay-button">Pay</button></td>
+            </tr>
+        </table>
+        <div style="color: red;">
+            {{ errorMessage }}
+        </div>
+    </div>
+</div>

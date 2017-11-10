@@ -1,0 +1,49 @@
+<div id="devDiv">
+    <h2>SM PAY</h2>
+    <table>
+        <tr>
+            <td>Title</td>
+            <td><input class="field" type="text" v-model="smPayObj.title"/></td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td><textarea rows="5" class="field" v-model="smPayObj.description"/></textarea></td>
+        </tr>
+        <tr>
+            <td>Price</td>
+            <td><input class="field" type="text" v-model="smPayObj.price"/></td>
+        </tr>
+        <tr>
+            <td style="padding-right: 20px;">BCA Account Number</td>
+            <td><input class="field" type="text" v-model="smPayObj.accountNumber"/></td>
+        </tr>
+        <tr>
+            <td style="padding-right: 20px;">First Name</td>
+            <td><input class="field" type="text" v-model="smPayObj.firstName"/></td>
+        </tr>
+        <tr>
+            <td style="padding-right: 20px;">Last Name</td>
+            <td><input class="field" type="text" v-model="smPayObj.lastName"/></td>
+        </tr>
+        <tr>
+            <td style="padding-right: 20px;">Address</td>
+            <td><textarea rows="5" class="field" v-model="smPayObj.address"/></textarea></td>
+        </tr>
+        <tr>
+            <td style="padding-right: 20px;">Mobile Phone Number</td>
+            <td><input class="field" type="text" v-model="smPayObj.mobile"/></td>
+        </tr>
+    </table>
+    <div><button v-on:click="save()" class="_1mf7 _4jy0 _4jy3 _4jy1 _51sy selected _42ft smpay-button">SAVE</button></div>
+</div>
+<style>
+    #devDiv {
+        background-color: white;
+        margin-bottom: 10px;
+        padding: 12px;
+    }
+
+    .field {
+        width: 200px;
+    }
+</style>

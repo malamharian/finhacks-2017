@@ -1,0 +1,28 @@
+{
+    "manifest_version": 2,
+    "name": "finhacks",
+    "description": "payment extension for facebook",
+    "version": "1.0",
+    "permissions": [
+        "activeTab"
+    ],
+    "browser_action": {
+        "default_icon": "icon.png",
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": ["http://www.facebook.com/*", "https://www.facebook.com/*"],
+            // "css": ["node_modules/bulma/css/bulma.css", "styles/main.css"],
+            "css": ["styles/main.css"],
+            "js": [
+                "lib/fb.js",
+                "lib/accounting.js",
+                "lib/vue.js",
+                "lib/jquery.js",
+                "dist/bundle.js"
+            ]
+        }
+    ],
+    "content_security_policy": "script-src 'self' https://connect.facebook.net; object-src 'self'"
+}

@@ -1,0 +1,21 @@
+{
+  "name": "finhacks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "file.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "html-loader": "^0.5.1",
+    "ts-loader": "^2.3.3",
+    "webpack": "^3.5.5"
+  },
+  "dependencies": {
+    "axios": "^0.16.2",
+    "bulma": "^0.5.1"
+  }
+}
